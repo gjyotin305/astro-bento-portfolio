@@ -1,9 +1,7 @@
 export const LINKS = {
-  github: "https://github.com/Ladvace",
-  linkedin: "https://www.linkedin.com/in/gianmarco-cavallo/",
-  medium: "https://ladvace.medium.com/",
-  discord: "https://discordapp.com/users/163300027618295808",
-  dribble: "https://dribbble.com/Ladvace_Jace",
+  github: "https://github.com/gjyotin305",
+  linkedin: "https://www.linkedin.com/in/jyotin-goel-16924b263/",
+  kaggle: "https://www.kaggle.com/gjyotin1724"
 };
 
 export const loaderAnimation = [
