@@ -3,6 +3,7 @@ import Card from "./Card/index.astro";
 import Button from "./Button.astro";
 import { LINKS } from "../lib/constants";
 import { Icon } from 'astro-icon/components'
+import { SiKaggle } from 'react-icons/si'
 import Tooltip from "./Tooltip/index";
 import { Image } from "astro:assets";
 ---
@@ -29,10 +30,10 @@ import { Image } from "astro:assets";
             <span class="sr-only">Linkedin Profile</span>
           </Button>
         </a>
-        <a href={LINKS.dribble} aria-label="dribble profile" target="_blank">
+        <a href={LINKS.kaggle} aria-label="Kaggle profile" target="_blank">
           <Button aria-label="dribble profile">
-            <Icon name="ri:dribbble-fill" class="h-6" />
-            <span class="sr-only">Dribble Profile</span>
+            <img src="https://img.icons8.com/?size=25&id=bMncK0wGFANA&format=png&color=000000">
+            <span class="sr-only">Kaggle Profile</span>
           </Button>
         </a>
         <Tooltip client:visible>
