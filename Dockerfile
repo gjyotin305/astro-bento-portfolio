@@ -1,6 +1,6 @@
 FROM node:20-slim as builder
 
-WORKDIR /build/
+WORKDIR /astro-bento-portfolio/
 
 EXPOSE 4321
 
