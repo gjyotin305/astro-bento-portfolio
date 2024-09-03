@@ -1,7 +1,9 @@
 export const LINKS = {
   github: "https://github.com/gjyotin305",
   linkedin: "https://www.linkedin.com/in/jyotin-goel-16924b263/",
-  kaggle: "https://www.kaggle.com/gjyotin1724"
+  kaggle: "https://www.kaggle.com/gjyotin1724",
+  raid: "https://raid.iitj.ac.in/",
+  devlup: "https://devluplabs.tech/#/"
 };
 
 export const loaderAnimation = [

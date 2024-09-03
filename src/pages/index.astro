@@ -7,6 +7,7 @@ import TimeZone from "../components/TimeZoneCard.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Now from "../components/Now.astro";
 import Globe from "../components/Globe";
+import MyClubs from "../components/MyClubs.astro";
 ---
 
 <script>
@@ -49,11 +50,6 @@ import Globe from "../components/Globe";
       title="Blog"
       href="/blog"
     />
-    <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-2 flex gap-4"
-      title="My Club"
-      href="https://raid.iitj.ac.in"
-    />
+    <MyClubs/>
   </main>
 </Layout>

@@ -1,0 +1,20 @@
+---
+import Card from "./Card/index.astro";
+import { LINKS } from "../lib/constants";
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-2 flex gap-4">
+    <div class="h-full">
+        <header class="flex items-center">
+        <h1 class="text-white text-xl font-bold">
+            My Clubs
+        </h1>
+        </header>
+        <div class="flex flex-col text-sm mt-4 w-fit">
+            <ul>
+                <a href={LINKS.raid}><li>RAID</li></a>
+                <a href={LINKS.devlup}><li>Devlup Labs</li></a>
+            </ul>
+        </div>
+    </div>
+</Card>
