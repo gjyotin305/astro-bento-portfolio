@@ -14,7 +14,7 @@ This is my first blog, where I will be sharing my approach of how I tackled Gend
 
 <div style="display: flex; align-items: center; gap: 40px;">
   <img src="https://thegradient.pub/content/images/2024/04/gender_gradient_header.jpeg" alt="Gender gradient header" width="300" />
-  <img src="https://files.oaiusercontent.com/file-PCcPJxpc4nF3cRLBsuQZcE?se=2024-12-19T05%3A43%3A12Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dc1be36b9-cba6-4971-a8df-faadba2cf150.webp&sig=AY9l43baRUw6cMQZnuf/g06Rd2ywzc6TJ52TdJQdWPQ%3D" alt="Diffusion model example" width="300" />
+  <img src="https://ideogram.ai/assets/progressive-image/balanced/response/ZUt2AgnDQ4S9lT4d-V0BwQ" alt="Diffusion model example" width="300" height="300"/>
 </div>
 
 <br>
