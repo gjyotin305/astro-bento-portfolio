@@ -2,7 +2,7 @@
 layout: ../../layouts/LayoutBlogPost.astro
 title: "The Prometeo AI Infrastructure Blog"
 description: "An inhouse LLM for Indian Institute of Technology Jodhpur's Technological Fest [Saga]"
-pubDate: 2025-1-28
+pubDate: 2025-2-05
 category: "projects"
 ---
 
@@ -16,12 +16,12 @@ Prometeo, the biggest techno-entrepreneurial fest of North-Western India, is an 
 
 Deploying Saga for a live event required a robust infrastructure to handle real-time queries efficiently. Here’s a high-level breakdown of the system:
 
-### 1. **Model Selection & Fine-Tuning**
-   - We used a **7B parameter Qwen-like model**, optimized for conversational AI.
-   - Fine-tuned with event-specific data: Prometeo’s history, event schedules, Nordic mythology, and general tech knowledge.
-   
+### 1. **Model Selection & Setup**
+   - We used a **7B parameter Qwen-like model**, optimized for conversational AI. Context Length of the model was set as "8192". (Ollama Internally uses RoPE Scaling([here](https://medium.com/@ngiengkianyew/understanding-rotary-positional-encoding-40635a4d078e))).
+   - Given Context with event-specific data: Prometeo’s history, event schedules, Nordic mythology, and general tech knowledge.
+
 ### 2. **Infrastructure & Deployment**
-   - **Inference Server:** Deployed on a GPU-based local instance with **Ollama** for optimized token streaming.
+   - **Inference Server:** Deployed on a GPU-based local instance(3 A5000 Servers) with **Ollama** for optimized token streaming.
    - **Load Balancing:** Utilized Nginx LoadBalancer to balance load between the servers.
    - **API Gateway:** Implemented via **FastAPI + Nginx** to route queries efficiently.
 
@@ -30,6 +30,59 @@ Deploying Saga for a live event required a robust infrastructure to handle real-
     <img src="../public/sys_arch.png" alt="System Architecture">
    </center>
 </div>
+
+## Some statistics on SAGA
+
+### The above stats are for 15 requests total time.
+
+**Note: Y axis represents ms (milliseconds)**
+
+### Prompt Eval Count: 
+It is the number of times a given prompt was evaluated by the LLM when generating a response.
+
+<div>
+   <center>
+    <img src="../public/prompt_eval_count_performance_1.png" alt="System Architecture">
+   </center>
+</div>
+
+### Prompt Eval duration:
+It is the time spent generating the response.
+
+<div>
+   <center>
+    <img src="../public/prompt_eval_duration_performance_1.png" alt="System Architecture">
+   </center>
+</div>
+
+### Eval Count: 
+It is the number of tokens in the response
+
+<div>
+   <center>
+    <img src="../public/eval_count_performance_1.png" alt="System Architecture">
+   </center>
+</div>
+
+### Total Duration:
+It refers to the overall time it takes for the language model to process a prompt and generate a response, including the time spent loading the model, evaluating the prompt, and generating the text, essentially representing the complete execution time of a single query. 
+
+<div>
+   <center>
+    <img src="../public/total_duration_performance_1.png" alt="System Architecture">
+   </center>
+</div>
+
+### Load Duration
+The time taken to basically load and unload the model to the GPU.
+
+<div>
+   <center>
+    <img src="../public/load_duration_performance_1.png" alt="System Architecture">
+   </center>
+</div>
+
+**Note: All Experiments were done on an A5000.**
 
 ## Technical Challenges & Solutions
 
@@ -46,7 +99,7 @@ Deploying Saga for a live event required a robust infrastructure to handle real-
    - Used a **context window of 1024 tokens** and session-based memory using Redis.
 
 ### **4. Competitor Q/A**
-   - Giving good answers when asked questions like "Is IITB > IITJ?" or "How is Prometeo better than TechFest IITB?" so that no institution is undermined was also a task, while maintaining the user persona.
+   - Giving good answers when asked questions like "Is IITJ > IITB" or "How is Prometeo better than TechFest IITB?" so that no institution is undermined was also a task, while maintaining the user persona.
 
 ### **5. Huge Startup Time**
    - One Major problem, was that after usage after a long time, the model took quite some time to load.
