@@ -35,8 +35,6 @@ Deploying Saga for a live event required a robust infrastructure to handle real-
 
 ### The above stats are for 15 requests total time.
 
-**Note: Y axis represents ms (milliseconds)**
-
 ### Prompt Eval Count: 
 It is the number of times a given prompt was evaluated by the LLM when generating a response.
 
@@ -55,6 +53,8 @@ It is the time spent generating the response.
    </center>
 </div>
 
+**Note: Y axis represents ms (milliseconds)**
+
 ### Eval Count: 
 It is the number of tokens in the response
 
@@ -72,6 +72,8 @@ It refers to the overall time it takes for the language model to process a promp
     <img src="../public/total_duration_performance_1.png" alt="System Architecture">
    </center>
 </div>
+
+**Note: Y axis represents ms (milliseconds)**
 
 ### Load Duration
 The time taken to basically load and unload the model to the GPU.
